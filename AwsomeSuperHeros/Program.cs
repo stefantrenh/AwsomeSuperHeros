@@ -1,3 +1,4 @@
+using AwsomeSuperHeros.Api;
 using AwsomeSuperHeros.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -15,6 +16,7 @@ namespace AwsomeSuperHeros
         public static void Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
+            ApiHelper.InitializeClient();
             HeroListModel.Init();
             host.Run();
         }

@@ -3,11 +3,33 @@
 @{
 }
 
-@foreach (var hero in Model.HeroList)
-{
-<p>@hero.Name</p>
-<p>@hero.SecretIdentiy</p>
-<p>@hero.SuperPower</p>
-<a class="btn btn-primary" asp-route-heroId="@hero.Id" asp-page="/hero/edithero">Edit</a>
-<a class="btn btn-danger" asp-route-heroId="@hero.Id" asp-page="/hero/removehero">Delete</a>
-}
+<div class="row">
+    @foreach (var hero in Model.HeroList)
+    {
+    <div class="col-4-sm">
+        <div class="card m-3" style="width: 18rem;">
+            <img src="@hero.ImgUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Your Super Hero @hero.Name!</h5>
+                <p>@hero.SecretIdentiy</p>
+                <p>@hero.SuperPower</p>
+                <a class="btn btn-primary" asp-route-heroId="@hero.Id" asp-page="/hero/edithero">Edit</a>
+                <a class="btn btn-danger" asp-route-heroId="@hero.Id" asp-page="/hero/removehero">Delete</a>
+            </div>
+        </div>
+    </div>
+
+    }
+
+</div>
+
+
+
+
+
+
+@*<p>@hero.Name</p>
+    <p>@hero.SecretIdentiy</p>
+    <p>@hero.SuperPower</p>
+    <a class="btn btn-primary" asp-route-heroId="@hero.Id" asp-page="/hero/edithero">Edit</a>
+    <a class="btn btn-danger" asp-route-heroId="@hero.Id" asp-page="/hero/removehero">Delete</a>*@

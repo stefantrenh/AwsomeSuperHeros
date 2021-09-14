@@ -19,11 +19,6 @@ namespace AwsomeSuperHeros.Pages.Hero
 
         public IActionResult OnPost()
         {
-            //var tempHero = HeroListModel.HeroList.Where(f => f.Id == Hero.Id).FirstOrDefault();
-            //tempHero.Id = Hero.Id;
-            //tempHero.Name = Hero.Name;
-            //tempHero.SecretIdentiy = Hero.SecretIdentiy;
-            //tempHero.SuperPower = Hero.SuperPower;
 
             foreach (var hero in HeroListModel.HeroList)
             {
