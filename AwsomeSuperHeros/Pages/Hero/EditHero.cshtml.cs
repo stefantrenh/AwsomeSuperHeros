@@ -17,17 +17,25 @@ namespace AwsomeSuperHeros.Pages.Hero
             Hero = HeroListModel.HeroList.Where(f => f.Id == heroId).FirstOrDefault();
         }
 
-        public void OnPost()
+        public IActionResult OnPost()
         {
-            var tempHero = HeroListModel.HeroList.Where(f => f.Id == Hero.Id).FirstOrDefault();
-            tempHero.Id = Hero.Id;
-            tempHero.Name = Hero.Name;
-            tempHero.SecretIdentiy = Hero.SecretIdentiy;
-            tempHero.SuperPower = Hero.SuperPower;
+            //var tempHero = HeroListModel.HeroList.Where(f => f.Id == Hero.Id).FirstOrDefault();
+            //tempHero.Id = Hero.Id;
+            //tempHero.Name = Hero.Name;
+            //tempHero.SecretIdentiy = Hero.SecretIdentiy;
+            //tempHero.SuperPower = Hero.SuperPower;
 
-            var dict = HeroListModel.HeroList.ToDictionary(x => x.Id);
+            foreach (var hero in HeroListModel.HeroList)
+            {
+                if (hero.Id == Hero.Id)
+                {
+                    hero.Name = Hero.Name;
+                    hero.SecretIdentiy = Hero.SecretIdentiy;
+                    hero.SuperPower = Hero.SuperPower;
+                }
+            }
 
-            if (dict.TryGetValue(myValue, out found)) found.OtherProperty = newValue;
+            return RedirectToPage("/Hero/SuperHeros");
         }
     }
 }
