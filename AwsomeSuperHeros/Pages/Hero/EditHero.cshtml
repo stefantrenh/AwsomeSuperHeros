@@ -1,0 +1,24 @@
+﻿@page
+@model AwsomeSuperHeros.Pages.Hero.EditHeroModel
+@{
+}
+
+<form method="post">
+    <div class="mb-3">
+        <label for="name" class="form-label">Name:</label>
+        <input type="text" class="form-control" id="name" asp-for="@Model.Hero.Name">
+        <div id="heroHelp" class="form-text">Write your awsome name!!</div>
+    </div>
+    <div class="mb-3">
+        <label for="secretIdentity" class="form-label">Secret Identity:</label>
+        <input type="text" class="form-control" id="secretIdentity" asp-for="@Model.Hero.SecretIdentiy>
+        <div id="heroHelp" class="form-text">We will never share your secrets!</div>
+    </div>
+    <div class="mb-3">
+        <label for="superPower" class="form-label">Super Power:</label>
+        <input type="text" class="form-control" id="superPower" asp-for="@Model.Hero.SuperPower">
+        <div id="heroHelp" class="form-text">Laserbeam????</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
