@@ -12,13 +12,17 @@ namespace AwsomeSuperHeros.Pages.Hero
     {
         [BindProperty]
         public HeroModel Hero { get; set; }
+
+ 
         public void OnGet()
         {
         }
-        public void OnPost()
+        public IActionResult OnPost()
         {
+            Hero.Id = HeroListModel.HeroList.LastOrDefault().Id + 1;
             HeroListModel.HeroList.Add(Hero);
 
+            return RedirectToPage("/Hero/SuperHeros");
         }
 
     }
