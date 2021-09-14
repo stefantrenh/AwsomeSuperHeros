@@ -10,11 +10,11 @@ namespace AwsomeSuperHeros.Pages.Hero
 {
     public class EditHeroModel : PageModel
     {
-        [BindProperty]
+        [BindProperty(SupportsGet = true)]
         public HeroModel Hero { get; set; }
-        public void OnGet(HeroModel hero)
+        public void OnGet(string heroName)
         {
-
+            Hero = HeroListModel.HeroList.Where(f => f.Name == heroName).FirstOrDefault();
         }
     }
 }
