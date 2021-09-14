@@ -12,7 +12,7 @@ namespace AwsomeSuperHeros.Pages.Hero
     {
         [BindProperty]
         public HeroModel Hero { get; set; }
-        public void OnGet()
+        public void OnGet(HeroModel hero)
         {
 
         }

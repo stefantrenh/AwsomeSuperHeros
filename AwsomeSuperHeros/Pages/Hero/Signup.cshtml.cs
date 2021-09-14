@@ -15,5 +15,11 @@ namespace AwsomeSuperHeros.Pages.Hero
         public void OnGet()
         {
         }
+        public void OnPost()
+        {
+            HeroListModel.HeroList.Add(Hero);
+
+        }
+
     }
 }
