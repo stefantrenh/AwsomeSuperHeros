@@ -5,8 +5,9 @@
 
 @foreach (var hero in Model.HeroList)
 {
-    <p>@hero.Name</p>
-    <p>@hero.SecretIdentiy</p>
-    <p>@hero.SuperPower</p>
-    <a class="btn btn-primary" asp-route-heroId="@hero.Id" asp-page="/hero/edithero">Edit</a>
+<p>@hero.Name</p>
+<p>@hero.SecretIdentiy</p>
+<p>@hero.SuperPower</p>
+<a class="btn btn-primary" asp-route-heroId="@hero.Id" asp-page="/hero/edithero">Edit</a>
+<a class="btn btn-danger" asp-route-heroId="@hero.Id" asp-page="/hero/removehero">Delete</a>
 }
